@@ -16,6 +16,7 @@ class Scraper
   end 
   
   def make_courses
+    course_info = self.get_courses
     course_titles = course_info.css("h2")
     course_schedules = course_info.css(".date")
     course_descriptions = course_info.css("p")
