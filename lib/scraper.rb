@@ -10,7 +10,7 @@ class Scraper
     page = Nokogiri::HTML(page)
     course_info = page.css("#course-grid .post")
     course_titles = course_info.css("h2")
-    p course_titles
+    p course_titles[1]
   end
   
   def print_courses
