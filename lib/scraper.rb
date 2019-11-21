@@ -20,9 +20,9 @@ class Scraper
     course_titles = course_info.css("h2")
     course_schedules = course_info.css(".date")
     course_descriptions = course_info.css("p")
-    p course_descriptions[0].text
     course_info.each_with_index do |course, index|
       course = Course.new()
+      binding.pry
       course.description = course_descriptions[index].text
       course.title = course_titles[index].text
       course.schedule = course_schedules[index].text 
