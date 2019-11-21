@@ -4,5 +4,8 @@ class Course
   def self.all 
     @@all_courses
   end
+  def reset_all
+    @@all_courses = []
+  end
 end 
 
