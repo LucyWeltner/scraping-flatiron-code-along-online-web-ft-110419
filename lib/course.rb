@@ -1,7 +1,8 @@
 class Course 
-  attr_accessor
+  attr_accessor :title, :schedule, :description
   @@all_courses
-  def initialize 
+  def initialize(title)
+    @title = title
   end 
   def self.all 
     @@all_courses
