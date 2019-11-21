@@ -21,7 +21,7 @@ class Scraper
     course_schedules = course_info.css(".date")
     course_descriptions = course_info.css("p")
     course_info.each_with_index do |course, index|
-      while index<course_description.length do
+      while index<course_descriptions.length do
         course = Course.new()
         course.description = course_descriptions[index].text
         course.title = course_titles[index].text
