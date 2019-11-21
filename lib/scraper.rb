@@ -28,7 +28,6 @@ class Scraper
       course.description = course_info[index].css("p").text
       course.title = course_info[index].css("h2").text
       course.schedule = course_info[index].css("date").text
-      p course.description
     end 
   end
 
