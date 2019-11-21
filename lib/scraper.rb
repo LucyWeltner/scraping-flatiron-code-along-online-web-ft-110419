@@ -11,14 +11,22 @@ class Scraper
 
   end
   
+  def get_courses
+    course_info = self.get_page.css("#course-grid .post")
+  end 
+  
   def make_courses
-    course_info = page.css("#course-grid .post")
     course_titles = course_info.css("h2")
     course_schedules = course_info.css(".date")
     course_descriptions = course_info.css("p")
-    course_info.each do |course|
-      Course.new()
+    course_info.each_with_index do |course, index|
+      course = Course.new()
+      course.description = course_descriptions[index].text
+      course.title = course_titles[index].text
+      course.schedule = course_schedules[index].text 
+    end 
   end
+
   def print_courses
     self.make_courses
     Course.all.each do |course|
