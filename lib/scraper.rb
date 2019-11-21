@@ -8,7 +8,7 @@ class Scraper
   def get_page 
     page = open("http://learn-co-curriculum.github.io/site-for-scraping/courses")
     page = Nokogiri::HTML(page)
-    page.css("#course-grid .post .same-height-right")
+    page.css("#course-grid .post h2")
     p page.text
     page
   end
